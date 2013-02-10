@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @category.name %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @category.position %>
+</p>
+
+<p>
+  <b>Associated events:</b>
+  <ul>
+    <%- @category.events.each do |event| %>
+    <li><%= link_to event.description.name, event %></li>
+    <%- end %>
+  </ul>
+</p>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

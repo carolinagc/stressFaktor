@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  date: 2012-10-30
+  time: 2012-10-30 22:04:12
+  description: MyString
+  location_id: 1
+  event_type_id: 1
+  organiser_id: 1
+  link: MyString
+
+two:
+  name: MyString
+  date: 2012-10-30
+  time: 2012-10-30 22:04:12
+  description: MyString
+  location_id: 1
+  event_type_id: 1
+  organiser_id: 1
+  link: MyString

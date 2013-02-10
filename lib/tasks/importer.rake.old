@@ -1,0 +1,72 @@
+require 'open-uri'
+
+namespace :importer do
+  desc 'import data from website'
+  task :import => :environment do
+
+    doc = Nokogiri::HTML(open('http://stressfaktor.squat.net/rss.php'))
+    doc.search('//item').each do |item|
+      name = item.children.first.text.strip.match(/.*\d\s(.+)\s\(.*/)[1]
+      event_type_name = item.children.first.text.strip.match(/(\d+.+\d)(.+?)([\(])/)[2]
+      time = Time.parse(item.children.first.text.strip.match(/([\d\:]{5})/)[1])
+      date = Date.parse(item.children.first.text.strip.match(/([\d\.]{5})/)[1].to_s+".#{Date.today.year.to_s}")
+      location_name = item.children.first.text.strip.match(/\(([^\(\)]+)\)/)[1]
+      description_name= item.children[1].text.strip
+      link = item.children[3].text
+
+      event=Event.new
+      event.build_description
+      event_name = event.description.name = name
+      event_description = event.description.description = description_name
+
+      eventType = EventType.new
+      if event_type_name.nil?
+            eventType.name ="n/a"
+      else
+            eventType.name = event_type_name
+      end
+      eventType.save
+
+      event.event_type_id = eventType.id
+      event.date = date
+      event.time = time
+
+      location = Location.new
+      locations = Location.all
+      locations.each do |location|
+            desc_type_location = Description.find_by_descriptable_type_and_name("Location", location_name)
+	    desc_id = Description.last.descriptable_id    
+	    if !desc_type_location.nil? 
+	      event.location_id = desc_type_location.id
+
+#	      event.save
+	    else
+	      location.build_description
+	      location.description.descriptable_type = "Location"
+	      location.description.descriptable_id = desc_id +1
+	      location.description.address = "Berlin"
+	      location.description.name = location_name
+	      location.description.description = "n/a"
+	      location.description.email = "n/a"
+	      location.description.link = "stressfaktor.squat.net"
+#	      location.save
+#     	      event.save
+	     end
+
+
+     end
+
+
+
+
+#      event.save
+    end
+  end
+
+  desc 'reset all imports'
+  task :reset => :environment do
+    Event.destroy_all
+    Location.destroy_all
+  end
+
+end

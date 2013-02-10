@@ -1,0 +1,355 @@
+Gem actionmailer-3.2.8
+  actionpack (= 3.2.8)
+  mail (~> 2.4.4)
+
+Gem actionpack-3.2.8
+  activemodel (= 3.2.8)
+  activesupport (= 3.2.8)
+  builder (~> 3.0.0)
+  erubis (~> 2.7.0)
+  journey (~> 1.0.4)
+  rack (~> 1.4.0)
+  rack-cache (~> 1.2)
+  rack-test (~> 0.6.1)
+  sprockets (~> 2.1.3)
+  tzinfo (~> 0.3.29, development)
+
+Gem activemodel-3.2.8
+  activesupport (= 3.2.8)
+  builder (~> 3.0.0)
+
+Gem activerecord-3.2.8
+  activemodel (= 3.2.8)
+  activesupport (= 3.2.8)
+  arel (~> 3.0.2)
+  tzinfo (~> 0.3.29)
+
+Gem activeresource-3.2.8
+  activemodel (= 3.2.8)
+  activesupport (= 3.2.8)
+
+Gem activesupport-3.2.8
+  i18n (~> 0.6)
+  multi_json (~> 1.0)
+
+Gem arel-3.0.2
+  hoe (~> 2.13, development)
+  minitest (~> 2.11, development)
+  rdoc (~> 3.10, development)
+
+Gem builder-3.0.4
+
+Gem bundler-1.2.1
+  ronn (>= 0, development)
+  rspec (~> 2.0, development)
+
+Gem carrierwave-0.7.1
+  activemodel (>= 3.2.0)
+  activesupport (>= 3.2.0)
+  cucumber (~> 1.1.4, development)
+  fog (>= 1.3.1, development)
+  json (>= 0, development)
+  mini_magick (>= 0, development)
+  mysql2 (>= 0, development)
+  rails (>= 3.2.0, development)
+  rmagick (>= 0, development)
+  rspec (~> 2.10.0, development)
+  sham_rack (>= 0, development)
+  timecop (>= 0, development)
+
+Gem choice-0.1.6
+
+Gem coffee-rails-3.2.2
+  coffee-script (>= 2.2.0)
+  railties (~> 3.2.0)
+
+Gem coffee-script-2.2.0
+  coffee-script-source (>= 0)
+  execjs (>= 0)
+
+Gem coffee-script-source-1.4.0
+
+Gem columnize-0.3.6
+
+Gem debugger-1.2.2
+  columnize (>= 0.3.1)
+  debugger-linecache (~> 1.1.1)
+  debugger-ruby_core_source (~> 1.1.5)
+  rake (~> 0.9.2.2, development)
+  rake-compiler (~> 0.8.0, development)
+
+Gem debugger-linecache-1.1.2
+  debugger-ruby_core_source (>= 1.1.1)
+  rake (~> 0.9.2.2, development)
+  rake-compiler (~> 0.8.0, development)
+
+Gem debugger-ruby_core_source-1.1.5
+  archive-tar-minitar (>= 0.5.2, development)
+  rake (~> 0.9.2, development)
+
+Gem erubis-2.7.0
+
+Gem execjs-1.4.0
+  multi_json (~> 1.0)
+  rake (>= 0, development)
+
+Gem geocoder-1.1.5
+
+Gem gmaps4rails-1.5.6
+  database_cleaner (>= 0, development)
+  factory_girl_rails (>= 0, development)
+  guard (~> 1.0.1, development)
+  guard-coffeescript (>= 0, development)
+  guard-jasmine (>= 0, development)
+  guard-rspec (>= 0, development)
+  guard-spork (>= 0, development)
+  jasmine (>= 0, development)
+  jquery-rails (>= 0, development)
+  mongoid (~> 3, development)
+  pry (>= 0, development)
+  rails (~> 3.2.1, development)
+  rspec-rails (>= 0, development)
+  sqlite3 (>= 0, development)
+  webmock (>= 0, development)
+
+Gem hike-1.2.1
+
+Gem htmlkickstart-0.0.1
+
+Gem i18n-0.6.1
+  activesupport (~> 3.0.0, development)
+  mocha (>= 0, development)
+  sqlite3 (>= 0, development)
+  test_declarative (>= 0, development)
+
+Gem journey-1.0.4
+  hoe (~> 2.13, development)
+  json (>= 0, development)
+  minitest (~> 2.11, development)
+  racc (>= 1.4.6, development)
+  rdoc (~> 3.10, development)
+  rdoc (~> 3.11, development)
+
+Gem jquery-rails-2.1.3
+  railties (< 5.0, >= 3.1.0)
+  thor (~> 0.14)
+
+Gem jquery-rails-2.1.4
+  railties (< 5.0, >= 3.0)
+  thor (< 2.0, >= 0.14)
+
+Gem json-1.7.5
+  permutation (>= 0, development)
+  sdoc (~> 0.3.16, development)
+
+Gem mail-2.4.4
+  i18n (>= 0.4.0)
+  mime-types (~> 1.16)
+  treetop (~> 1.4.8)
+
+Gem mime-types-1.19
+  hoe (~> 3.0, development)
+  hoe-doofus (~> 1.0, development)
+  hoe-gemspec (~> 1.0, development)
+  hoe-git (~> 1.0, development)
+  hoe-seattlerb (~> 1.0, development)
+  minitest (~> 3.1, development)
+  nokogiri (~> 1.5, development)
+  rdoc (~> 3.10, development)
+  rubyforge (>= 2.0.4, development)
+
+Gem multi_json-1.3.6
+  rake (~> 0.9, development)
+  rdoc (~> 3.9, development)
+  rspec (~> 2.6, development)
+  simplecov (~> 0.4, development)
+
+Gem multi_json-1.4.0
+  rake (~> 0.9, development)
+  rdoc (~> 3.9, development)
+  rspec (~> 2.6, development)
+  simplecov (~> 0.4, development)
+
+Gem nokogiri-1.5.5
+  hoe (~> 2.16, development)
+  hoe-bundler (>= 1.1, development)
+  hoe-debugging (>= 1.0.3, development)
+  hoe-gemspec (>= 1.0, development)
+  hoe-git (>= 1.4, development)
+  mini_portile (>= 0.2.2, development)
+  minitest (~> 2.2.2, development)
+  racc (>= 1.4.6, development)
+  rake (>= 0.9, development)
+  rake-compiler (= 0.8.0, development)
+  rdoc (~> 3.10, development)
+  rexical (>= 1.0.5, development)
+
+Gem pg-0.14.1
+  hoe (~> 3.0, development)
+  hoe-deveiate (~> 0.1, development)
+  hoe-highline (~> 0.1.0, development)
+  hoe-mercurial (~> 1.4.0, development)
+  rake-compiler (~> 0.7, development)
+  rdoc (~> 3.10, development)
+
+Gem polyglot-0.3.3
+
+Gem rack-1.4.1
+  bacon (>= 0, development)
+  memcache-client (>= 0, development)
+  mongrel (>= 1.2.0.pre2, development)
+  rake (>= 0, development)
+  ruby-fcgi (>= 0, development)
+  thin (>= 0, development)
+
+Gem rack-cache-1.2
+  bacon (>= 0, development)
+  dalli (>= 0, development)
+  memcached (>= 0, development)
+  rack (>= 0.4)
+
+Gem rack-ssl-1.3.2
+  rack (>= 0)
+
+Gem rack-test-0.6.2
+  rack (>= 1.0)
+
+Gem rails-3.2.8
+  actionmailer (= 3.2.8)
+  actionpack (= 3.2.8)
+  activerecord (= 3.2.8)
+  activeresource (= 3.2.8)
+  activesupport (= 3.2.8)
+  bundler (~> 1.0)
+  railties (= 3.2.8)
+
+Gem rails-erd-1.0.0
+  activerecord (>= 3.0)
+  activesupport (>= 3.0)
+  choice (~> 0.1.6)
+  rake (~> 0.9, development)
+  ruby-graphviz (~> 1.0.4)
+
+Gem railties-3.2.8
+  actionpack (= 3.2.8)
+  activesupport (= 3.2.8)
+  rack-ssl (~> 1.3.2)
+  rake (>= 0.8.7)
+  rdoc (~> 3.4)
+  thor (< 2.0, >= 0.14.6)
+
+Gem rake-0.9.2.2
+  minitest (~> 2.1, development)
+
+Gem rake-10.0.2
+  minitest (~> 2.1, development)
+
+Gem rdoc-3.12
+  ZenTest (~> 4, development)
+  hoe (~> 2.12, development)
+  json (~> 1.4)
+  minitest (~> 2, development)
+  minitest (~> 2.6, development)
+  racc (~> 1.4, development)
+
+Gem rmagick-2.13.1
+
+Gem ruby-graphviz-1.0.8
+  gems (>= 0, development)
+  rake (>= 0, development)
+  rdoc (>= 0, development)
+
+Gem rubygems-bundler-1.1.0
+  tf (>= 0, development)
+
+Gem rvm-1.11.3.5
+  minitest (>= 0, development)
+  rake (>= 0, development)
+
+Gem sass-3.2.1
+  maruku (>= 0.5.9, development)
+  yard (>= 0.5.3, development)
+
+Gem sass-3.2.3
+  maruku (>= 0.5.9, development)
+  yard (>= 0.5.3, development)
+
+Gem sass-rails-3.2.5
+  railties (~> 3.2.0)
+  sass (>= 3.1.10)
+  tilt (~> 1.3)
+
+Gem sprockets-2.1.3
+  coffee-script (~> 2.0, development)
+  eco (~> 1.0, development)
+  ejs (~> 1.0, development)
+  execjs (~> 1.0, development)
+  hike (~> 1.2)
+  json (>= 0, development)
+  rack (~> 1.0)
+  rack-test (>= 0, development)
+  rake (>= 0, development)
+  tilt (!= 1.3.0, ~> 1.1)
+
+Gem sqlite3-1.3.6
+  hoe (~> 3.0, development)
+  mini_portile (~> 0.2.2, development)
+  rake-compiler (~> 0.7.0, development)
+  rdoc (~> 3.10, development)
+
+Gem thor-0.16.0
+  bundler (~> 1.0, development)
+  childlabor (>= 0, development)
+  fakeweb (~> 1.3, development)
+  rake (~> 0.9, development)
+  rdoc (~> 3.9, development)
+  rspec (~> 2.3, development)
+  simplecov (~> 0.4, development)
+
+Gem tilt-1.3.3
+  RedCloth (>= 0, development)
+  bluecloth (>= 0, development)
+  builder (>= 0, development)
+  coffee-script (>= 0, development)
+  contest (>= 0, development)
+  creole (>= 0, development)
+  creole (>= 0, development)
+  erubis (>= 0, development)
+  haml (>= 2.2.11, development)
+  kramdown (>= 0, development)
+  kramdown (>= 0, development)
+  less (>= 0, development)
+  liquid (>= 0, development)
+  markaby (>= 0, development)
+  maruku (>= 0, development)
+  nokogiri (>= 0, development)
+  radius (>= 0, development)
+  rdiscount (>= 0, development)
+  redcarpet (>= 0, development)
+  redcarpet (>= 0, development)
+  sass (>= 0, development)
+  wikicloth (>= 0, development)
+  yajl-ruby (>= 0, development)
+
+Gem treetop-1.4.12
+  activesupport (>= 0, development)
+  i18n (~> 0.5.0, development)
+  jeweler (>= 0, development)
+  polyglot (>= 0)
+  polyglot (>= 0.3.1)
+  rake (>= 0, development)
+  rr (~> 1.0, development)
+  rspec (>= 2.0.0, development)
+
+Gem tzinfo-0.3.34
+
+Gem tzinfo-0.3.35
+
+Gem uglifier-1.3.0
+  bundler (~> 1.0, development)
+  execjs (>= 0.3.0)
+  jeweler (~> 1.8.3, development)
+  multi_json (>= 1.0.2, ~> 1.0)
+  rdoc (~> 3.11, development)
+  rspec (~> 2.7, development)
+

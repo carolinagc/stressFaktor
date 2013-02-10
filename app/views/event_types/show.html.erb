@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @event_type.name %>
+</p>
+<p>
+  <ul>
+   <%- @event_type.events.each do |event| %>
+  <li> <%= link_to event.description.name, event %></li>
+   <%- end %>
+  </ul>
+
+</p>
+
+<%= link_to 'Edit', edit_event_type_path(@event_type) %> |
+<%= link_to 'Back', event_types_path %>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StressFaktor</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ <div class = "col_16">
+   <%= render "shared/top_menu" %>
+  </div>
+<div id="wrap" class="clearfix">
+  <div class = "col_12">
+    <%= yield %>
+  </div>
+</div>
+ <div class = "col_16">
+   <%= render "shared/footer" %>
+ </div>
+</body>
+</html>

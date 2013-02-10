@@ -1,0 +1,39 @@
+<%= form_for(@organizer, :html => {:multipart => true}) do |f| %>
+  <% if @organizer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@organizer.errors.count, "error") %> prohibited this organizer from being saved:</h2>
+
+      <ul>
+      <% @organizer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.fields_for :description do |description| %>
+    <%= render 'shared/descriptions', :f => description %>
+  <% end %>
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= image_tag(@organizer.image_url(:thumb).to_s, :class => "style1") %>
+    <%= f.label :remove_image %>
+    <%= f.check_box :remove_image %>
+    <%= f.label :upload_image %><br />
+    <%= f.file_field :image %>    
+    <%= f.label :remote_image_url, "or image URL" %>
+    <%= f.text_field :remote_image_url %>
+  </div>
+
+  <div class="field">
+    <ul>
+      <%- @organizer.events.each do |event| %>
+      
+       <li>Events organized:  <%= link_to event.description.name, event %></li>
+    <%- end %>
+   </ul>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

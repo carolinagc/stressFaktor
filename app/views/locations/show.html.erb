@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Name:</b>
+  <%= @location.description.name %>
+</p>
+<p>
+  <%= image_tag((@location.image_url(:thumb).to_s), :class => "style1") %>
+</p>
+
+
+<p>
+  <b>Description:</b>
+  <%= @location.description.description %>
+</p>
+
+
+<p>
+  <b>Address:</b>
+Latitude <%= @location.description.latitude %>
+Longitud <%= @location.description.longitude %>
+
+  <%= link_to @location.description.address, "http://maps.google.com?q=#{@location.description.address}" %> <br/>
+  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.description.address}" %>
+</p>
+
+
+<p>
+  <b>Email:</b>
+  <%= mail_to @location.description.email %>
+</p>
+
+
+<p>
+  <b>Link:</b>
+  <%= link_to @location.description.link, @location.description.link %>
+</p>
+
+
+<p>
+  <b>Capacity:</b>
+  <%= @location.capacity %>
+</p>
+
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

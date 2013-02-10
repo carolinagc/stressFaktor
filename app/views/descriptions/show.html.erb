@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @description.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @description.description %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @description.address %>
+</p>
+
+<p>
+  <b>Address:</b>
+Latitude <%= @description.latitude %>
+Longitud <%= @description.longitude %>
+ <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@description.address}" %>
+</p>
+
+
+<p>
+  <b>Link:</b>
+  <%= @description.link %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @description.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_description_path(@description) %> |
+<%= link_to 'Back', descriptions_path %>

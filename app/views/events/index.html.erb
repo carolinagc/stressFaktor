@@ -1,0 +1,45 @@
+
+<h3>Listing events</h3>
+<div class = "inner">
+<%= link_to 'New Event', new_event_path %>
+
+<table class="sortable">
+ <thead>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Location</th>
+    <th>Event type</th>
+    <th>Web site</th>
+    <th></th>
+  </tr>
+  </thead>
+
+<% @events.each do |event| %>
+
+ <thead>
+  <tr>
+    <td value="<%= event.description.name %>"><%= image_tag((event.image_url(:thumb).to_s), :class => "style1") %></br>
+        <em><b><%= event.description.name %></b></em><br/>
+    <%= event.description.description %></td>
+    <td><%= event.date.strftime('%d-%m-%Y') %></td>
+    <td><%= event.time.strftime('%H:%M') %></td>
+    <td value="<%= event.location.description.name %>"><%= link_to event.location.description.name, event.location %></td>
+    <td value="<%= event.event_type.name %>"><%= link_to event.event_type.name, event.event_type %></td>
+    <td><%= link_to "web", event.description.link %></td>
+
+    <td><%= link_to image_tag("icons/eye.png"), event %>
+    <%= link_to image_tag("icons/page_white_edit.png"), edit_event_path(event) %>
+    <%= link_to image_tag("icons/delete.png"), event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  </thead>
+ <% end %>
+
+
+</table>
+
+<br />
+
+
+</div>

@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @event.description.name %>
+</p>
+<p>
+  <%= image_tag((@event.image_url(:thumb).to_s), :class => "style1") %>
+</p>
+
+
+<p>
+  <b>Date:</b>
+  <%= @event.date %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @event.time %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @event.description.description %>
+</p>
+
+
+<p>
+  <b>Event type:</b>
+  <% if @event.event_type.nil? %> 
+    <%= link_to @event.event_type.name, @event.event_type  %>
+  <% end %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= link_to @event.location.description.name, @event.location %>
+</p>
+
+
+<p>
+  <b>Link:</b>
+  <%= link_to @event.description.link, @event.description.link %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <ul>
+  <%- @event.categories.each do |category| %>
+  <li> <%= link_to category.name, category %></li>
+  <%- end %>
+ </ul>
+</p>
+
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

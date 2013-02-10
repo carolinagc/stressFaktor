@@ -1,0 +1,12 @@
+<h3> Events calendar</h3>
+
+<div id="calendar">
+  <% calendar_for @events do |calendar| %>
+lppñpñpñ
+    date = calendar.date
+    <% calendar.day do |date, events| %>
+      <%= date.day %>
+    <% end %>
+  <% end %>
+</div>
+
