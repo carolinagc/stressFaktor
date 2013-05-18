@@ -37,4 +37,7 @@ StressFaktor::Application.configure do
   
   config.log_level = :fatal
 
+  config.action_mailer.default_url_options = {:host => "localhost:3000"}
+
+
 end

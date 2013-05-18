@@ -1,6 +1,9 @@
 class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
+  before_filter :authorize, :only => [:new, :edit, :create]
+  before_filter :admin_required, :only => [:destroy]
+
   def index
     @categories = Category.all
 

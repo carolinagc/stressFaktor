@@ -8,7 +8,12 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :categories 
   accepts_nested_attributes_for :description, :reject_if => :all_blank
 
-
-
+  def self.search(search)
+    if search
+     Description.where(name: search, descriptable_type: "Event")
+    else
+      scoped
+    end
+  end
 
 end

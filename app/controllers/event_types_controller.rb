@@ -1,6 +1,10 @@
 class EventTypesController < ApplicationController
   # GET /event_types
   # GET /event_types.json
+
+  before_filter :authorize, :only => [:new, :edit, :create]
+  before_filter :admin_required, :only => [:destroy]
+
   def index
     @event_types = EventType.all
     respond_to do |format|

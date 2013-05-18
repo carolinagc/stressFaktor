@@ -1,13 +1,35 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
+  before_filter :authorize, :only => [:new, :edit, :create]
+  before_filter :admin_required, :only => [:destroy]
+
+
   def index
-    @events = Event.all
+    if params[:search] && !params[:search].empty?
+      @events = Event.search(params[:search])
+    else
+#debugger
+      @events = Event.all
+    end
+    @side_events = Event.where("date=?", Date.today)
+    @descriptions = Description.all
+#to call gmap4rails you need to use model where latitude and longitud are
+#    @json = Event.all.map(&:description).compact.uniq.to_gmaps4rails
+    @json = @descriptions.to_gmaps4rails
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
     end
   end
+
+  def calendar
+    @events = Event.all
+    @date = params[:month] ? Date.parse(params[:month]) : Date.today
+
+  end
+
 
   # GET /events/1
   # GET /events/1.json
@@ -22,17 +44,7 @@ class EventsController < ApplicationController
   # GET /events/calendar
   # GET /events/calendar.json
 
-  def calendar
-    @events = Event.all
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @events }
-   end 
-  end
 
-
-  # GET /events/new
-  # GET /events/new.json
   def new
     @event = Event.new
     @event.build_description
@@ -67,7 +79,8 @@ class EventsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
-    end
+
+   end
   end
 
   # PUT /events/1

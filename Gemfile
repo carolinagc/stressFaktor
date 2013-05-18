@@ -10,6 +10,9 @@ gem 'pg'
 #Calender view
 gem 'watu_table_builder', :require => 'table_builder'
 
+#Search
+gem "ransack"
+
 
 #for drawing diagrams of the database schema
 gem 'rails-erd'
@@ -45,7 +48,7 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

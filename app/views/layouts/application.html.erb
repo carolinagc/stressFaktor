@@ -9,6 +9,13 @@
 <body>
  <div class = "col_16">
    <%= render "shared/top_menu" %>
+   <% if current_user%>
+     Logged in as <%= current_user.email %>
+   <%= link_to "Logout", logout_path %>
+   <% else %>
+     <%= link_to "Sign up", signup_path %>
+     <%= link_to "Log in", login_path %>
+   <% end %>
   </div>
 <div id="wrap" class="clearfix">
   <div class = "col_12">

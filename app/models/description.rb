@@ -9,8 +9,6 @@ class Description < ActiveRecord::Base
 #  validates_uniqueness_of :link
 
  scope :locations, where(:descriptable_type => "Location")
-
-
   after_validation :geocode
   acts_as_gmappable :process_geocoding => false
   def gmaps4rails_address
@@ -20,8 +18,9 @@ class Description < ActiveRecord::Base
 
   def gmaps4rails_infowindow
       # add here whatever html content you desire, it will be displayed when users clicks on the marker
-    "<h5>#{name} #{description}</h5> "
+    "<h5>#{name}</h5><p> #{description}</p> "
 
   end
+
 
 end

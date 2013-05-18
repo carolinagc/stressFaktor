@@ -1,6 +1,13 @@
 StressFaktor::Application.routes.draw do
+#  get "password_resets/new"
 
-  match 'events/calendar(/:year(/:month))' => 'events#calendar', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+  get 'signup', to: 'users#new', as:'signup'
+  get 'login', to: 'sessions#new', as:'login'
+  get 'logout', to: 'sessions#destroy', as:'logout'
+  resources :users
+  resources :sessions
+  resources :password_resets
+  match 'calendar(/:year(/:month))' => 'events#calendar', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   resources :event_categories
   resources :locations
@@ -8,7 +15,13 @@ StressFaktor::Application.routes.draw do
   resources :descriptions
   resources :categories
   resources :event_types
-  resources :events
+  resources :events do
+    collection  do
+      post 'side_events'
+      get 'calendar'
+    end
+  end
+
 
 #  resources :locations do
 #    resources :descriptions

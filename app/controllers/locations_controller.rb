@@ -1,11 +1,12 @@
 class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
+  before_filter :authorize, :only => [:new, :edit, :create]
+  before_filter :admin_required, :only => [:destroy]
   def index
     @locations = Location.all
     @descriptions = Description.all
     @json = @descriptions.to_gmaps4rails
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @locations }

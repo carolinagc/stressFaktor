@@ -6,7 +6,8 @@
 </p>
 <p>
   <ul>
-   <%- @event_type.events.each do |event| %>
+   <% @event_type.events.each do |event| %>
+
   <li> <%= link_to event.description.name, event %></li>
    <%- end %>
   </ul>

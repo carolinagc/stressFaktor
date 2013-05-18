@@ -1,11 +1,22 @@
 <h3> Events calendar</h3>
-
 <div id="calendar">
-  <% calendar_for @events do |calendar| %>
-lppñpñpñ
-    date = calendar.date
-    <% calendar.day do |date, events| %>
+  <h4 id="month">
+    <%= link_to '<', calendar_events_path(:month => (@date.beginning_of_month-1).strftime("%Y-%m-01")) %>
+    <%= h @date.strftime("%B %Y") %>
+    <%= link_to '>', calendar_events_path(:month => (@date.end_of_month+1).strftime("%Y-%m-01")) %>
+  </h4>
+
+  <%= calendar_for @events, :year => @date.year, :month => @date.month do |calendar| %>
+
+    <%= calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')%>
+    <% calendar.day(:day_method => :date) do |date, events| %>
+
       <%= date.day %>
+      <ul>
+	<% for event in events %>
+        <li><%= link_to h(event.description.name), event %></li>
+	<% end %>
+      </ul>
     <% end %>
   <% end %>
 </div>

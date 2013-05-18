@@ -12,8 +12,14 @@ class Location < ActiveRecord::Base
 
   def ensure_presence_of_description
     description = Description.create unless description.present?
+  end
+
+  def gmaps4rails_infowindow
+      # add here whatever html content you desire, it will be displayed when users clicks on the marker
+    "<h5>#{name}</h5><p> #{description}</p> <p>#{Event.all.map(&:location)}</p> "
 
   end
+
 
 
 end

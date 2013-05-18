@@ -1,0 +1,6 @@
+README
+
+This is an early alpha version of a fork from a pet project done with a RailsgirlsBerlin study group.
+It scrappes stressfaktor.squat.net webpage to get events and locations.
+Provides 2 views to show them in a calendar and in a google map.
+The app is not finished, missing quite a lot of front-end work

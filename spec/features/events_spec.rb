@@ -26,7 +26,7 @@ pending    it "display events index" do
 
 
 
-pending    it "Create an event" do
+    it "Create an event" do
       visit events_path
       click_link "New Event"
       save_and_open_page

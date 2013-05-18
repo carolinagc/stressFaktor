@@ -1,8 +1,30 @@
 
 <h3>Listing events</h3>
-<div class = "inner">
+<p>
 <%= link_to 'New Event', new_event_path %>
+</p>
+<div class="map">
+  <%= gmaps4rails(@json) %>
+</div>
+<div class="mapContainer">
+ <div class = "sidemap">
 
+     Berlin <br/>
+     <button type="button" class="btn btn-navbar pull-left">Today</button>
+     <button type="button" class="btn btn-navbar pull-left">Tomorrow</button>
+     <div id="side_events">   
+       <%= render 'side_events' %>
+     </div>
+
+ </div>
+</div>
+
+<div class ="search">
+<%= form_tag events_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search" %>
+<% end %>
+</div>
 <table class="sortable">
  <thead>
   <tr>
@@ -15,11 +37,13 @@
     <th></th>
   </tr>
   </thead>
+<% if params[:search] && !params[:search].empty?%>
+   <%= render 'search' %>
+<% else %>
 
 <% @events.each do |event| %>
-
  <thead>
-  <tr>
+  <tr> 
     <td value="<%= event.description.name %>"><%= image_tag((event.image_url(:thumb).to_s), :class => "style1") %></br>
         <em><b><%= event.description.name %></b></em><br/>
     <%= event.description.description %></td>
@@ -38,7 +62,7 @@
 
 
 </table>
-
+<% end %>
 <br />
 
 

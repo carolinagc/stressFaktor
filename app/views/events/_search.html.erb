@@ -1,0 +1,20 @@
+<% @events.each do |event| %>
+
+ <thead>
+  <tr> 
+    <td value="<%= event.name %>"></br>
+      <em><b><%= event.name %></b></em><br/>
+      <%= event.description %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><%= link_to "web", event.link %></td>
+    <td><%= link_to image_tag("icons/eye.png"), event %>
+    <%= link_to image_tag("icons/page_white_edit.png"), edit_event_path(event) %>
+    <%= link_to image_tag("icons/delete.png"), event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  </thead>
+ <% end %>
+</table>
+
